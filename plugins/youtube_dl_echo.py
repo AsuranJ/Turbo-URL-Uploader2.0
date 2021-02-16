@@ -36,35 +36,6 @@ async def echo(bot, update):
     intmsg = await update.reply_text("Analyzing given link...", quote=True)   
     w = update.text
     url = "https://z5.movhdapp.ml/?url=" + w
-    youtube_dl_username = None
-    youtube_dl_password = None
-    file_name = None
-    if "|" in url:
-        url_parts = url.split("|")
-        if len(url_parts) == 2:
-            url = url_parts[0]
-            file_name = url_parts[1]
-        elif len(url_parts) == 4:
-            url = url_parts[0]
-            file_name = url_parts[1]
-            youtube_dl_username = url_parts[2]
-            youtube_dl_password = url_parts[3]
-        else:
-            for entity in update.entities:
-                if entity.type == "text_link":
-                    url = entity.url
-                elif entity.type == "url":
-                    o = entity.offset
-                    l = entity.length
-                    url = url[o:o + l]
-        if url is not None:
-            url = url.strip()
-        if file_name is not None:
-            file_name = file_name.strip()
-        if youtube_dl_username is not None:
-            youtube_dl_username = youtube_dl_username.strip()
-        if youtube_dl_password is not None:
-            youtube_dl_password = youtube_dl_password.strip()
         logger.info(url)
         logger.info(file_name)
     else:
