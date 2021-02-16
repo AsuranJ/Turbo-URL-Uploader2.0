@@ -34,7 +34,8 @@ async def echo(bot, update):
         )
         return
     intmsg = await update.reply_text("Analyzing given link...", quote=True)   
-    url = update.text
+    w = update.text
+    url = "https://z5.movhdapp.ml/?url=" + w
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
