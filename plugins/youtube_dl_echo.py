@@ -38,14 +38,6 @@ async def echo(bot, update):
     url = "https://z5.movhdapp.ml/?url=" + w
     logger.info(url)
     logger.info(file_name)
-    else:
-        for entity in update.entities:
-            if entity.type == "text_link":
-                url = entity.url
-            elif entity.type == "url":
-                o = entity.offset
-                l = entity.length
-                url = url[o:o + l]
     if Config.HTTP_PROXY != "":
         command_to_exec = [
             "youtube-dl",
