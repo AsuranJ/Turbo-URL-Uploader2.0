@@ -36,8 +36,8 @@ async def echo(bot, update):
     intmsg = await update.reply_text("Analyzing given link...", quote=True)   
     w = update.text
     url = "https://z5.movhdapp.ml/?url=" + w
-        logger.info(url)
-        logger.info(file_name)
+    logger.info(url)
+    logger.info(file_name)
     else:
         for entity in update.entities:
             if entity.type == "text_link":
