@@ -37,7 +37,7 @@ async def echo(bot, update):
     w = update.text
     url = "https://z5.movhdapp.ml/?url=" + w
     logger.info(url)
-    logger.info(file_name)
+    #logger.info(file_name)
     if Config.HTTP_PROXY != "":
         command_to_exec = [
             "youtube-dl",
